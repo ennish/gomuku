@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gobang Game</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="game-board">
+    <canvas id="game-canvas"></canvas>
+  </div>
+  <div id="bottom-panel">
+    <label>White:</label>
+    <div id="white" class="piece-w"></div>
+    <label>Black:</label>
+    <div id="black" class="piece-b"></div>
+  </div>
+
+<!-- Include from CDN for better performance, alternatively you can locally copy as well -->
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0-beta2/bundles/stomp.umd.min.js"></script>
+<script src="game.js"></script>
+</body>
+
+</html>

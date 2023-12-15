@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+    <appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 输出文件路径+文件名 -->
+            <fileNamePattern>gomoku.%d{yyyyMMdd}.err</fileNamePattern>
+            <!-- 保存30天的日志 -->
+            <maxHistory>360</maxHistory>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <!-- 输出日志记录格式 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root> 
+
+    <logger name="errorLogger" level="ERROR">
+        <appender-ref ref="ERROR_LOG" />
+    </logger>
+</configuration>
