@@ -13,14 +13,14 @@ public class GameApi {
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public String greeting(String msg){
+    public String greeting(String msg) {
 
-        return "Hello " + msg;
+        return "Hello," + msg;
     }
 
     @MessageMapping("/play")
     @SendTo("/topic/play")
-    public String send(){
+    public String send() {
 
         return "";
     }
